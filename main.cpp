@@ -6,10 +6,15 @@
 
 int main(int argc, char* argv[]) {
 
-    //help string
-    std::string helpString = "Usage: ./LBASimulator --servers \"10\" --tasks \"10\" "
-                            "--algorithm \"PTC\" --latencies \"5\" \"10\" --capabilities \"1\" \"2\"";
+    std::string aboutString = "LBASimulator is a cmdline based application to simulate load balancing algorithms. \n"
+                              "Currently, it supports 3 types of algorithm, namely PTC, PTCRR and PTCB. \n" 
+                              "It print results on the terminal with load distribution across servers and overall response time for the system. \n"
+                              "It has different configuration parameters, type --help for help on parameters. \n";
     
+    if (argc == 1) {
+        std::cout << aboutString << std::endl;
+        exit(0);
+    }
     Logger& logger = Logger::getLogger();
 
     cli::Parser parser(argc, argv);
@@ -38,7 +43,7 @@ int main(int argc, char* argv[]) {
     LBAConfig config(servers, tasks, algo, lat, cap, range);
 
     // Create LBASimulator instance
-    LBASimulator simulator(config, helpString);
+    LBASimulator simulator(config, aboutString);
 
     // Run simulation
     simulator.run();

@@ -31,12 +31,6 @@ bool LBAlgorithm::setConfiguration() {
 
     // Set probe latencies
     probeLatencies.clear();
-    // for (int i = 0; i < servers; i++) {
-    //     int min = latencies[0];
-    //     int max = latencies[1];
-    //     int randomNum = LBAlgorithm::generateRandomNumber(min, max);
-    //     probeLatencies.push_back(randomNum);
-    // }
 
     if (config.isRange() == true) {
         for (int i = 0; i < servers; i++) {

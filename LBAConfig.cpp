@@ -57,8 +57,3 @@ bool LBAConfig::setCapabilities(const std::vector<int>& value) {
 std::string LBAConfig::getAlgorithm() {
     return algorithm;
 }
-
-bool LBAConfig::read() {
-    // Read configuration parameters (Placeholder)
-    return true;
-}

@@ -31,8 +31,6 @@ public:
     bool setCapabilities(const std::vector<int>& value);
 
     std::string getAlgorithm();
-
-    bool read();
 };
 
 #endif // LBACONFIG_H

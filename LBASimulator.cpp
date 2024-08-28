@@ -7,7 +7,6 @@ LBASimulator::LBASimulator(const LBAConfig& config, const std::string& helpStrin
     : config(config), helpString(helpString) {}
 
 bool LBASimulator::printHelp() {
-    // Print help string (Placeholder)
     std::cout << helpString << std::endl;
     return true;
 }
